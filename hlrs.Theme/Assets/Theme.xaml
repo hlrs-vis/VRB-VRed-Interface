@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/hlrsTheme;component/Assets/Colors.xaml"/>
+        <ResourceDictionary Source="/hlrsTheme;component/Assets/Buttons.xaml"/>
+        <ResourceDictionary Source="/hlrsTheme;component/Assets/Converters.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+
+
+</ResourceDictionary>

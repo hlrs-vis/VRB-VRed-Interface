@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:hlrsTheme.Converters">
+
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converters:NullOrEmptyStringToVisibilityConverter x:Key="NullOrEmptyStringToVisibilityConverter" />
+    <converters:ToLowerConverter x:Key="ToLowerConverter" />
+    <converters:MultiplyConverter x:Key="MultiplyConverter" />
+    <converters:StyleConverter x:Key="StyleConverter" />
+
+</ResourceDictionary>

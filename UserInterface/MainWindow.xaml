@@ -1,0 +1,90 @@
+﻿<Window x:Class="UserInterface.MainWindow"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:login="clr-namespace:UserInterface.Views.Login"
+        xmlns:rooms="clr-namespace:UserInterface.Views.Rooms"
+        xmlns:control="clr-namespace:UserInterface.Views.Control"
+        mc:Ignorable="d"
+        Title="VirMuDeKo-BW" 
+        Height="{Binding WindowHeight, FallbackValue=500, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+        Width="{Binding WindowWidth, FallbackValue=650, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+        Left="{Binding WindowLeft, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+        Top="{Binding WindowTop, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+        ResizeMode="CanMinimize">
+
+    <Window.Resources>
+        <Storyboard x:Key="SlideInRoomsView"
+                    TargetProperty="(Canvas.Left)"
+                    AccelerationRatio=".4"
+                    DecelerationRatio=".4">
+            <DoubleAnimation Storyboard.TargetName="RoomsView" Duration="0:0:0.6"
+                             From="720" To="0">
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="SlideOutRoomsView"
+                    TargetProperty="(Canvas.Left)"
+                    AccelerationRatio=".4"
+                    DecelerationRatio=".4">
+            <DoubleAnimation Storyboard.TargetName="RoomsView" Duration="0:0:0.6"
+                             From="0" To="720">
+            </DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+
+    <i:Interaction.Triggers>
+        <i:DataTrigger Binding="{Binding ChangeView, Mode=OneWay}" Value="Rooms">
+            <i:ControlStoryboardAction Storyboard="{StaticResource SlideInRoomsView}"     
+                                        ControlStoryboardOption="Play"/>
+        </i:DataTrigger>
+
+        <i:DataTrigger Binding="{Binding ChangeView, Mode=OneWay}" Value="Login">
+            <i:ControlStoryboardAction Storyboard="{StaticResource SlideOutRoomsView}"     
+                                       ControlStoryboardOption="Play"/>
+        </i:DataTrigger>
+    </i:Interaction.Triggers>
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="{StaticResource HighlightBrush}" Height="120" 
+              Visibility="{Binding HeaderVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="VirMuDeKo-BW" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25,0" Foreground="{StaticResource HighlightForegroundBrush}" FontSize="25"></TextBlock>
+        </Grid>
+
+        <login:LoginView Grid.Row="1" DataContext="{Binding LoginViewModel}"/>
+
+        <Canvas Grid.Row="1" Name="MainContentCanvas">
+
+            <rooms:RoomsView x:Name="RoomsView" Canvas.Top="0" Canvas.Left="720"
+                             Height="{Binding ElementName=MainContentCanvas, Path=ActualHeight}" 
+                             Width="{Binding ElementName=MainContentCanvas, Path=ActualWidth}"
+                             DataContext="{Binding RoomsViewModel}"/>
+
+            <!--<views:ControllerView x:Name="ControllerView" Canvas.Top="0" Canvas.Left="0" 
+                                  Height="{Binding ElementName=MainContentCanvas, Path=ActualHeight}" 
+                                  Width="{Binding ElementName=MainContentCanvas, Path=ActualWidth}"
+                                  Visibility="Hidden"/>-->
+        </Canvas>
+
+        <Grid Grid.Row="1" Visibility="{Binding ShowControlView, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+            <control:ControlView x:Name="ControlView" 
+                             DataContext="{Binding ControlViewModel}"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Height="30"  Background="{StaticResource HighlightBrush}" Visibility="{Binding FooterVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="Powered by foxbyte." VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{StaticResource HighlightForegroundBrush}" Margin="10,0" FontSize="14"></TextBlock>
+        </Grid>
+
+    </Grid>
+</Window>

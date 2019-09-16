@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/hlrsTheme;component/Themes/HlrsTextBox.xaml"/>
+        <ResourceDictionary Source="/hlrsTheme;component/Themes/HlrsComboBox.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+
+</ResourceDictionary>

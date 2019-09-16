@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="UserInterface.Views.Control.ControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:toggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
+             mc:Ignorable="d" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Return -->
+        <Button Grid.Row="0" Style="{StaticResource TextButton}" HorizontalAlignment="Left" Margin="0"
+                Command="{Binding LeaveRoomCommand}">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Icon="AngleLeft" Foreground="{StaticResource HighlightBrush}" Width="16" Height="16"/>
+                <TextBlock Text="Abmelden" VerticalAlignment="Center" Margin="10,0" FontSize="14"></TextBlock>
+            </StackPanel>
+        </Button>
+        <!-- END Return -->
+
+        <!-- Content -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Name="HeadImage" Source="{Binding IsHeadAviable}"
+                   Width="70" Height="70" Margin="19.05,20,55,20" Grid.Column="1">
+                <!--<Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="25"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>-->
+            </Image>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="20" Grid.ColumnSpan="2">
+
+
+                <Image Name="ControllerLeftImage" Source="{Binding IsLeftControllerAviable}" Width="70" Height="70" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="25"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image Name="ControllerRightImage" Source="{Binding IsRightControllerAviable}" Width="70" Height="70" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-25"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+            </StackPanel>
+
+            <toggleSwitch:HorizontalToggleSwitch Name="HeadToggleSwitch" 
+                                                 Grid.Row="0" Grid.Column="2" 
+                                                 IsChecked="{Binding HeadTracking, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                 UncheckedBackground="Transparent" UncheckedForeground="{StaticResource ForegroundBrush}" 
+                                                 CheckedBackground="{StaticResource HighlightBrush}"
+                                                 Margin="20,42" Height="26"/>
+
+            <toggleSwitch:HorizontalToggleSwitch Name="ControlerToggleSwitch" 
+                                                 Grid.Row="1" Grid.Column="2" 
+                                                 IsChecked="{Binding ControllerTracking, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                 UncheckedBackground="Transparent" UncheckedForeground="{StaticResource ForegroundBrush}" 
+                                                 CheckedBackground="{StaticResource HighlightBrush}"
+                                                 Margin="20,42" Height="26"/>
+
+        </Grid>
+
+        <!-- END Content -->
+
+
+
+    </Grid>
+</UserControl>

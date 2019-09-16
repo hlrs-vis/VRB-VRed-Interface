@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <SolidColorBrush x:Key="HighlightBrush">#29768a</SolidColorBrush>
+    <Color x:Key="Higlight">#29768a</Color>
+
+    <SolidColorBrush x:Key="SubHighlightBrush">#fffdea</SolidColorBrush>
+    <Color x:Key="SubHiglight">#fffdea</Color>
+
+    <SolidColorBrush x:Key="AlertBrush">#c23b22</SolidColorBrush>
+    <Color x:Key="Alert">#c23b22</Color>
+
+    <SolidColorBrush x:Key="HighlightForegroundBrush">#ffffff</SolidColorBrush>
+    <Color x:Key="HiglightForeground">#ffffff</Color>
+
+    <SolidColorBrush x:Key="ForegroundBrush">#212121</SolidColorBrush>
+    <Color x:Key="Foreground">#212121</Color>
+
+    <SolidColorBrush x:Key="BackgroundBrush">#ffffff</SolidColorBrush>
+    <Color x:Key="Background">#ffffff</Color>
+
+
+</ResourceDictionary>
