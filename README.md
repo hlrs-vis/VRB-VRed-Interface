@@ -13,14 +13,20 @@ details.
 
 How to built
 -------
-Checkout this Project
-Checkout openvr-master as subproject of this project
-Create folder "packeges" as subproject of this project
-Install the following packeges in this folder:
+
+- **Checkout this Project**
+- **Checkout openvr-master as subproject of this project**
+- **Create folder "packeges" as subproject of this project**
+- **Install the following packeges in this folder:**
+
 	DllExport.1.6.3
+	
 	FontAwesome.WPF.4.7.0.9
+	
 	log4net.2.0.8
+	
 	Microsoft.Xaml.Behaviors.Wpf.1.0.1
+	
 	ToggleSwitch.1.1.2
 
 [1]: https://github.com/hlrs-vis/covise
