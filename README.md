@@ -15,9 +15,12 @@ How to built
 -------
 
 - **Checkout this Project**
-- **Checkout openvr-master as subproject of this project**
-- **Create folder "packages" as subproject of this project**
-- **Install the following packages in this folder:**
+- **Open visual studio solution:** VRB-VRed-Interface.sln
+- **if necessary:**
+
+- Checkout openvr-master as subproject of this project
+- Create folder "packages" as subproject of this project
+- Install the following packages in this folder:
 
 	DllExport.1.6.3
 	
