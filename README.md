@@ -1,7 +1,7 @@
 VRB-VRed-Interface
 ====================
-This project enables the collaborative use of VRED via VRB (Virtual Reality Broker, part of [COVISE] [1])
-The project is part of a collaboration between [HLRS] [2], [Kompetenzzentrum Virtual Engineering Rhein-Neckar] [3] and foxbyte [4] as part of the project VirMuDeKo(virtuelle multi-device Kollaboration).
+This project enables the collaborative use of VRED via VRB (Virtual Reality Broker, part of [COVISE][1])
+The project is part of a collaboration between [HLRS][2], [Kompetenzzentrum Virtual Engineering Rhein-Neckar][3] and [foxbyte][4] as part of the project VirMuDeKo(virtuelle multi-device Kollaboration).
  
 
 License
