@@ -17,7 +17,7 @@ How to built
 - **Checkout this Project**
 - **Checkout openvr-master as subproject of this project**
 - **Create folder "packeges" as subproject of this project**
-- **Install the following packeges in this folder:**
+- **Install the following packages in this folder:**
 
 	DllExport.1.6.3
 	
